@@ -1,61 +1,82 @@
-# Data Pipeline with Reddit, Airflow, Celery, Postgres, S3, AWS Glue, Athena, and Redshift
+# Reddit Data Pipeline
 
-This project provides a comprehensive data pipeline solution to extract, transform, and load (ETL) Reddit data into a Redshift data warehouse. The pipeline leverages a combination of tools and services including Apache Airflow, Celery, PostgreSQL, Amazon S3, AWS Glue, Amazon Athena, and Amazon Redshift.
+This project provides an end-to-end data pipeline for extracting, transforming, and loading (ETL) Reddit data into an Amazon Redshift data warehouse. By leveraging Apache Airflow, Celery, PostgreSQL, Amazon S3, AWS Glue, Amazon Athena, and Amazon Redshift, this pipeline ensures efficient data processing and analytics.
 
-## Overview
+## Features
+- **Automated ETL**: Seamlessly extract, transform, and load Reddit data.
+- **Scalable Storage**: Use Amazon S3 for raw data storage.
+- **Efficient Transformation**: AWS Glue and Athena for structured transformations.
+- **Robust Orchestration**: Apache Airflow for workflow management.
+- **Powerful Analytics**: Amazon Redshift for querying and Power BI for visualization.
 
-The pipeline is designed to:
+## Pipeline Workflow
+1. **Data Extraction**: Fetches Reddit data via API.
+2. **Raw Data Storage**: Saves extracted data into Amazon S3.
+3. **Metadata Management**: Uses PostgreSQL for tracking processes.
+4. **Data Transformation**: AWS Glue and Athena clean and format the data.
+5. **Data Loading**: Transfers transformed data into Amazon Redshift.
+6. **Visualization**: Power BI provides insights into processed data.
 
-1. Extract data from Reddit using its API.
-2. Store the raw data into an S3 bucket from Airflow.
-3. Transform the data using AWS Glue and Amazon Athena.
-4. Load the transformed data into Amazon Redshift for analytics and querying.
-5. Visulize data using PowerBI
+## Technologies Used
+- **Apache Airflow & Celery**: Workflow scheduling and task management.
+- **PostgreSQL**: Metadata storage.
+- **Amazon S3**: Cloud storage for raw data.
+- **AWS Glue**: ETL and schema cataloging.
+- **Amazon Athena**: SQL-based querying and transformation.
+- **Amazon Redshift**: Data warehousing for analytics.
+- **Power BI**: Business intelligence and data visualization.
 
-## Architecture
-![RedditDataEngineering.png](RedditDataEngineering.png)
+## Installation & Setup
+### Prerequisites
+Ensure you have the following:
+- **AWS Account** with permissions for S3, Glue, Athena, and Redshift.
+- **Reddit API Credentials** to access Reddit data.
+- **Docker Installed** for containerized services.
+- **Python 3.9+** for running scripts.
 
-1. **Reddit API**: Source of the data.
-2. **Apache Airflow & Celery**: Orchestrates the ETL process and manages task distribution.
-3. **PostgreSQL**: Temporary storage and metadata management.
-4. **Amazon S3**: Raw data storage.
-5. **AWS Glue**: Data cataloging and ETL jobs.
-6. **Amazon Athena**: SQL-based data transformation.
-7. **Amazon Redshift**: Data warehousing and Quering.
-8. **PowerBI**: Data Visulizaton.
-
-## Prerequisites
-- AWS Account with appropriate permissions for S3, Glue, Athena, and Redshift.
-- Reddit API credentials.
-- Docker Installation
-- Python 3.9 or higher
-
-## System Setup
-1. Clone the repository.
-   ```bash
-    git clone https://github.com/airscholar/RedditDataEngineering.git
+### Steps to Setup
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/airscholar/RedditDataEngineering.git
+   cd RedditDataEngineering
    ```
-2. Create a virtual environment.
-   ```bash
-    python3 -m venv venv
+2. Create and activate a virtual environment:
+   ```sh
+   python3 -m venv venv
+   source venv/bin/activate  # macOS/Linux
+   venv\Scripts\activate  # Windows
    ```
-3. Activate the virtual environment.
-   ```bash
-    source venv/bin/activate
+3. Install required dependencies:
+   ```sh
+   pip install -r requirements.txt
    ```
-4. Install the dependencies.
-   ```bash
-    pip install -r requirements.txt
+4. Configure settings:
+   ```sh
+   mv config/config.conf.example config/config.conf
    ```
-5. Rename the configuration file and the credentials to the file.
-   ```bash
-    mv config/config.conf.example config/config.conf
+   Add your credentials and configuration details in `config.conf`.
+5. Start Docker containers:
+   ```sh
+   docker-compose up -d
    ```
-6. Starting the containers
-   ```bash
-    docker-compose up -d
+6. Access the Airflow web UI:
+   ```sh
+   open http://localhost:8080
    ```
-7. Launch the Airflow web UI.
-   ```bash
-    open http://localhost:8080
-   ```
+   (Or manually navigate to `http://localhost:8080` in your browser.)
+
+## Usage
+- **Run the ETL Pipeline**: Trigger Airflow DAGs to extract and process Reddit data.
+- **Monitor Workflow**: Use the Airflow UI to track tasks and logs.
+- **Query Transformed Data**: Access Athena and Redshift for structured queries.
+- **Visualize Insights**: Load Redshift data into Power BI for analysis.
+
+## Contributions
+Feel free to contribute by submitting pull requests or reporting issues.
+
+## License
+This project is licensed under the MIT License.
+
+---
+For further details, refer to the project documentation or contact the maintainers.
+
