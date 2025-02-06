@@ -40,8 +40,8 @@ Ensure you have the following:
 ### Steps to Setup
 1. Clone this repository:
    ```sh
-   git clone https://github.com/airscholar/RedditDataEngineering.git
-   cd RedditDataEngineering
+   git clone https://github.com/RavinduTharanga/DataEngineeringProject2.git
+   cd RedditDataEngineeringProject2
    ```
 2. Create and activate a virtual environment:
    ```sh
