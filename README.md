@@ -1,6 +1,6 @@
-# Reddit Data Pipeline
+# ETL and Visualization of Reddit Data Using Power BI
 
-This project provides an end-to-end data pipeline for extracting, transforming, and loading (ETL) Reddit data into an Amazon Redshift data warehouse. By leveraging Apache Airflow, Celery, PostgreSQL, Docker, Amazon S3, AWS Glue, Amazon Athena, and Amazon Redshift, this pipeline ensures efficient data processing and analytics.
+This project provides an end-to-end data pipeline for extracting, transforming, and loading (ETL) Reddit data into an Amazon Redshift data warehouse and visulize data using PowerBI. By leveraging Apache Airflow, Celery, PostgreSQL, Docker, Amazon S3, AWS Glue, Amazon Athena, and Amazon Redshift, this pipeline ensures efficient data processing and analytics.
 
 ## Architecture
 ![RedditDataEngineering.png](RedditDataEngineering.png)
