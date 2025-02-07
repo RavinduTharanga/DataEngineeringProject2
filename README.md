@@ -29,6 +29,9 @@ This project provides an end-to-end data pipeline for extracting, transforming, 
 - **Amazon Redshift**: Data warehousing for analytics.
 - **Power BI**: Business intelligence and data visualization.
 
+## Visulization using PowerBI
+![visulization.png]
+
 ## Installation & Setup
 ### Prerequisites
 Ensure you have the following:
