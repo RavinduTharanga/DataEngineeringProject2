@@ -30,7 +30,7 @@ This project provides an end-to-end data pipeline for extracting, transforming, 
 - **Power BI**: Business intelligence and data visualization.
 
 ## Visulization using PowerBI
-![visulization.png](visulizaton.png)
+![visualization.png](visualization.png)
 
 ## Installation & Setup
 ### Prerequisites
